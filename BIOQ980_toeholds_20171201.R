@@ -7,6 +7,6 @@ library(platexpress)
 ## HERE: oocalc > export to csv; unticking "save data as shown" (usually
 ## recommmended) messes up times and introduces jumps! 
 
-raw <- readPlateData(files="BIOQ980_toeholds_20171201.csv",type="Synergy", skip=56, time.conversion=1/60, time.format="%H:%M:%S",sep=",")
+raw <- readPlateData(files="BIOQ980_toeholds_20171201_synergy.csv",type="Synergy", skip=56, time.conversion=1/60, time.format="%H:%M:%S",sep=",")
 
 viewPlate(raw)
