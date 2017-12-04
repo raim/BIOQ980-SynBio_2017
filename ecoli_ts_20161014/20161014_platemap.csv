@@ -1,0 +1,22 @@
+	1	2	3	4	5	6	7	8	9	10	11	12
+"A"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"B"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"C"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"D"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"E"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"F"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"G"	"WT; Inj:NA"	"pUC18mV; Inj:NA"	"pUC18mV; Inj:0"	"pUC18mV; Inj:100"	"pUC18mV; Inj:200"	"pUC18mV; Inj:300"	"pUC18mV; Inj:400"	"pUC18mV; Inj:500"	"pUC18mV; Inj:600"	"pUC18mV; Inj:700"	"pUC18mV; Inj:800"	"pUC18mV; Inj:900"
+"H"	"WT;Inj:NA;blank"	"pUC18mV;Inj:NA;blank"	"pUC18mV;Inj:0;blank"	"pUC18mV;Inj:100;blank"	"pUC18mV;Inj:200;blank"	"pUC18mV;Inj:300;blank"	"pUC18mV;Inj:400;blank"	"pUC18mV;Inj:500;blank"	"pUC18mV;Inj:600;blank"	"pUC18mV;Inj:700;blank"	"pUC18mV;Inj:800;blank"	"pUC18mV;Inj:900;blank"
+												
+												
+			"OD"									
+	"WT "	"Pre-culture in M9"										
+	"pUC18mV"	"Pre-culture in M9"										
+												
+	"Medium"	"M9"	200	"uL"	"WT;pUC18mV"							
+		"glucose"	4	"g/L"	"WT;pUC18mV"							
+		"uracil"	40	"mg/L"	"WT;pUC18mV"							
+		"Spectinomycin, 200x"	5	"uL/mL"	"WT;pUC18mV"							
+		"Ampicillin, 1000x"	1	"uL/mL"	"pUC18mV"							
+		"culture"	5	"uL/mL"	"WT;pUC18mV"							
+		"IPTG, 0.008 M"	5	"uL"	"pUC18mV"	"at different times (see Inj:), final concentration 195 uM"						
