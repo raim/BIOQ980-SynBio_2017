@@ -1,6 +1,8 @@
 library(platexpress)
 
 
+### PRE-PROCESS DATA
+
 ## READING IN DATA: this is often the most time-consuming
 ## step, since softwares and users always change their export
 ## formats and no standard format for platereader data exists
@@ -40,6 +42,10 @@ data <- correctBlanks(data=raw, plate=plate)
 
 ## inspect grouped data
 viewGroups(data, g1,g2)
+
+
+
+### FLUORESCENCE/OD
 
 
 ## Fluorescence per OD ~ proteins/cell
@@ -107,11 +113,17 @@ viewGroups(od.data, g1,g2, dids=c("FL/OD/unind."))
 
 results <- boxData(od.data, did="FL/OD/unind.", rng=.8, groups=g2, type="bar")
 
-## TODO: compare G1 vs. G4
+
+## TODO: compare G1 vs. G4 - what's the difference?
+
+## TODO: try to get something out from the first measurement
+## (2017_11_28); compare G1, G2, G3, G4 ??
 
 ## TODO: instead of at given OD, get the maximal FL/OD/unind. values,
 ## and record at which time/OD this is reached
 
+
+### GROWTH RATES
 
 ## cut out first growth phase
 gdat  <- cutData(data,rng=c(0,500))  
@@ -134,3 +146,6 @@ growth.parameters <- grofitGetParameters(fits)
 ## make nicer plot (never forget correct axis labels) of this and discuss!
 gr4 <- growth.parameters[,"TestId"]=="G4"
 boxplot(growth.parameters[gr4,"A.model"] ~ growth.parameters[gr4,"AddId"])
+
+## TODO: for the brave-hearted, can you fit growth rates
+## for individual growth phases in LB medium?
