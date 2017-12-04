@@ -47,7 +47,7 @@ fl <- getData(data, "GFP")
 od <- getData(data, "OD")
 data <- addData(data, ID="FL/OD", dat=fl/od)
 
-## DISCUSS: why does FL/OD (proteins per cell)
+## TODO: discuss why does FL/OD (proteins per cell)
 ## vary over the growth phases!?
 viewGroups(data, g1, g2, dids=c("OD","FL/OD"))
 
@@ -107,19 +107,30 @@ viewGroups(od.data, g1,g2, dids=c("FL/OD/unind."))
 
 results <- boxData(od.data, did="FL/OD/unind.", rng=.8, groups=g2, type="bar")
 
-## TODO: compare G1 vs. G4; 
+## TODO: compare G1 vs. G4
 
 ## TODO: instead of at given OD, get the maximal FL/OD/unind. values,
 ## and record at which time/OD this is reached
 
-## TODO: fit growth rates for each experiment/well
-## by grofit and plot growth rate and maximal capacity vs. IPTG induction
 
 ## cut out first growth phase
-gdat  <- cutData(data,rng=c(100,250))  
+gdat  <- cutData(data,rng=c(0,500))  
 viewGroups(gdat, g1, g2, dids=c("OD","FL/OD"))
 
 
+library(grofit)
 grodat <- data2grofit(gdat, did="OD", plate=plate, wells=unlist(g1))
 
+## set interactive to TRUE, to interactively confirm or reject fit!
+fitparams <- grofit.2.control(interactive=FALSE, plot=TRUE)
+pdf("growthrates.pdf") # redirect all plots to this pdf
+fits <- gcFit.2(time=grodat$time, data=grodat$data, control=fitparams)
+dev.off()
 
+## get parameters of growth models
+growth.parameters <- grofitGetParameters(fits)
+
+## TODO: find out what I am plotting here,
+## make nicer plot (never forget correct axis labels) of this and discuss!
+gr4 <- growth.parameters[,"TestId"]=="G4"
+boxplot(growth.parameters[gr4,"A.model"] ~ growth.parameters[gr4,"AddId"])
