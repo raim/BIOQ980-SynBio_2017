@@ -94,6 +94,9 @@ gr1.all <- g1[["G1"]] # NOTE the double [[]] for lists!
 gr1.uni <- g2[["G1_00"]] 
 gr4.all <- g1[["G4"]] 
 gr4.uni <- g2[["G4_00"]] 
+## calculate mean for each time-point
+gr1.mn <- apply(flod[,gr1.uni], 1, mean)
+gr4.mn <- apply(flod[,gr4.uni], 1, mean)
 ## normalize separately for each group
 uni <- flod
 uni[,gr1.all] <- uni[,gr1.all]/gr1.mn
@@ -145,7 +148,7 @@ growth.parameters <- grofitGetParameters(fits)
 ## TODO: find out what I am plotting here,
 ## make nicer plot (never forget correct axis labels) of this and discuss!
 gr4 <- growth.parameters[,"TestId"]=="G4"
-boxplot(growth.parameters[gr4,"A.model"] ~ growth.parameters[gr4,"AddId"])
+boxplot(growth.parameters[gr4,"A.model"] ~ as.numeric(as.character(growth.parameters[gr4,"AddId"])))
 
 ## TODO: for the brave-hearted, can you fit growth rates
 ## for individual growth phases in LB medium?
